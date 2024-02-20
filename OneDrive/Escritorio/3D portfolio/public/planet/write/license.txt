@@ -1,0 +1,11 @@
+Model Information:
+* title:	Hispano Olivetti typewriter, Sabadell, Catalunya
+* source:	https://sketchfab.com/3d-models/hispano-olivetti-typewriter-sabadell-catalunya-d174f5bfc0924a91a196f6ee107a8d68
+* author:	khem.ib (https://sketchfab.com/khem_ib)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Hispano Olivetti typewriter, Sabadell, Catalunya" (https://sketchfab.com/3d-models/hispano-olivetti-typewriter-sabadell-catalunya-d174f5bfc0924a91a196f6ee107a8d68) by khem.ib (https://sketchfab.com/khem_ib) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
