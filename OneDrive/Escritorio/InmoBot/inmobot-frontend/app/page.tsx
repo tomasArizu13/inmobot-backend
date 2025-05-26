@@ -12,6 +12,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Loader2 } from "lucide-react"
 import { useRouter } from "next/navigation"
 
+// Configuración de la API
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api'
+
 interface TasacionResult {
   estimado_min: number;
   estimado_prom: number;
@@ -57,10 +60,10 @@ export default function Home() {
         superficie: parseFloat(formData.superficie)
       }
 
-      console.log('Enviando solicitud a:', 'http://localhost:8000/tasar')
+      console.log('Enviando solicitud a:', `${API_URL}/tasar`)
       console.log('Datos a enviar:', dataToSend)
 
-      const response = await fetch('http://localhost:8000/tasar', {
+      const response = await fetch(`${API_URL}/tasar`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -88,7 +91,9 @@ export default function Home() {
 
   const handleDownloadPDF = async () => {
     try {
-      const response = await fetch('http://localhost:8000/informe_tasacion.pdf')
+      const response = await fetch(`${API_URL}/informe_tasacion.pdf`)
+      if (!response.ok) throw new Error('Error al descargar el PDF')
+      
       const blob = await response.blob()
       const url = window.URL.createObjectURL(blob)
       const a = document.createElement('a')
@@ -100,7 +105,7 @@ export default function Home() {
       document.body.removeChild(a)
     } catch (error) {
       console.error('Error al descargar el PDF:', error)
-      alert('Error al descargar el PDF')
+      setError('Error al descargar el PDF')
     }
   }
 
